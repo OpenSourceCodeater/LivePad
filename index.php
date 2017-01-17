@@ -16,10 +16,17 @@
   <script type="text/javascript">
     var room_name='';
     var room_hash='';
+    var token='';
     <?php 
     if(isset($_GET["hash"])){
       ?>
       room_hash='<?php echo $_GET["hash"]; ?>';
+      <?php
+    } ?>
+    <?php 
+    if(isset($_GET["token"])){
+      ?>
+      token='<?php echo $_GET["token"]; ?>';
       <?php
     } ?>
   </script>
@@ -48,7 +55,7 @@
          <a type="button" class="btn btn-primary" onclick="copyToClipboard()"><span class="glyphicon glyphicon-copy" aria-hidden="true" ></span>&nbsp;Copy Room id</a>
       </div>
       <div class="btn-group" role="group">
-        <a type="button" class="btn btn-danger" href="https://livepad.herokuapp.com/">Leave Room&nbsp;<span class="glyphicon glyphicon-log-out" aria-hidden="true"></span></a>
+        <a type="button" class="btn btn-danger" href="https://livepad.herokuapp.com/?token=raju_ujar">Leave Room&nbsp;<span class="glyphicon glyphicon-log-out" aria-hidden="true"></span></a>
       </div>
     </div>
   </div>
@@ -111,7 +118,8 @@
       // TODO: replace with your Firebase project configuration.
 
       if(room_hash==""){
-        document.getElementById('initial').style.visibility='visible';
+        if(token=="raju_ujar")
+          document.getElementById('initial').style.visibility='visible';
       }
       else{
         var config = {
