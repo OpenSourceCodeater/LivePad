@@ -9,7 +9,7 @@
 
     #v_center {
       position: relative;
-      top: 10%;
+      top: 5%;
     }
 
   </style>
