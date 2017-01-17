@@ -9,7 +9,7 @@
 
     #v_center {
       position: relative;
-      top: 25%;
+      top: 10%;
     }
 
   </style>
@@ -42,13 +42,21 @@
 </head>
 
 <body onload="init()">
-  <div id="room_name">
-
+  <div id="room_name" style="visibility:hidden">
+    <div class="btn-group btn-group-justified" role="group">
+      <div class="btn-group" role="group">
+         <a type="button" class="btn btn-primary" onclick="copyToClipboard()"><span class="glyphicon glyphicon-copy" aria-hidden="true" ></span>&nbsp;Copy Room id</a>
+      </div>
+      <div class="btn-group" role="group">
+        <a type="button" class="btn btn-danger" href="https://livepad.herokuapp.com/">Leave Room&nbsp;<span class="glyphicon glyphicon-log-out" aria-hidden="true"></span></a>
+      </div>
+    </div>
   </div>
 
   <div id="firepad"></div>
   <div class="container" id="v_center">
     <div id="initial" style="visibility:hidden" >
+      <div align="center"><img src="img/logo.png" alt="logo" width="200px" height="200px"/></div>
       <form method="GET" action="/">
         <div class="form-group">
           <div class="input-group">   
@@ -117,8 +125,7 @@
           // Get Firebase Database reference.
           var firepadRef = getExampleRef(room_hash);
 
-          document.getElementById('room_name').innerHTML= '<div class="btn-group btn-group-justified" role="group"><div class="btn-group" role="group"><a type="button" class="btn btn-primary" onclick="copyToClipboard()"><span class="glyphicon glyphicon-copy" aria-hidden="true" ></span>&nbsp;Copy Room id</a></div><div class="btn-group" role="group"><a type="button" class="btn btn-danger" href="https://flock-ide.herokuapp.com/">Leave Room&nbsp;<span class="glyphicon glyphicon-log-out" aria-hidden="true"></span></a></div></div>';
-          //document.getElementById('room_name').innerHTML= '<table class="table"><tr><td><button type="button" class="btn  btn-block" onclick="copyToClipboard()" >Copy Room id</button></td><td><button  class="btn btn-block"><a href="https://flock-ide.herokuapp.com/">Leave Room</a></button></td></tr></table>';
+          document.getElementById('room_name').style.visibility='visible';
           // Create CodeMirror (with lineWrapping on).
           var codeMirror = CodeMirror(document.getElementById('firepad'), { lineWrapping: true });
 
@@ -148,6 +155,6 @@
     }
 
   </script>
- 
+
 </body>
 </html>
