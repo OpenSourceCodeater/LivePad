@@ -138,7 +138,7 @@
           var firepad = Firepad.fromCodeMirror(firepadRef, codeMirror, {
             richTextShortcuts: true,
             richTextToolbar: true,
-            defaultText: 'Share Room id and collaborate with your friends.',
+            defaultText: 'Share Room id and collaborate with your friends.\nRoom id:   '+firepadRef.key,
             userId: userId
           });
           $('.powered-by-firepad').hide();
