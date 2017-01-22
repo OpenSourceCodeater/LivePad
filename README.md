@@ -25,3 +25,5 @@ A way to collaborate with your friends.
 
 - On the Top-Right, Click 'Leave Room' to exit current room.
 
+**For more info see this <a href='https://www.youtube.com/watch?v=XPWI9zDndnE'>video</a>**
+
